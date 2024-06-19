@@ -1,12 +1,32 @@
 .app_container {
     display: flex;
     justify-content: center;
+    color: white;
 }
 
 .app_layout {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 24px 8px;
-    width: 500px;
+    padding: 16px;
 }
+
+.video_bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+    background-color: black;
+}
+
+@media only screen and (max-width: 1000px) {
+    .video_bg {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 500%;
+        z-index: -1;
+        background-color: black;
+    }
+  }

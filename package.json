@@ -15,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@react-oauth/google": "^0.12.1",
     "@types/mini-css-extract-plugin": "^2.5.1",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
@@ -39,7 +38,6 @@
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-webpack-plugin": "^4.2.0",
-    "google-spreadsheet": "^4.1.2",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.0",
     "prettier": "^3.2.5",

@@ -1,35 +1,22 @@
-import React, { useEffect } from "react"
-import * as styles from "./TitleStyles.module.css"
-import { GoogleSpreadsheet } from "google-spreadsheet"
+import React, { useEffect } from 'react'
+import * as styles from './Main.module.css'
+import { Block } from '../Block/Block'
 
 interface IProps {
-    creds: any
+    sheets: any
 }
 
 export const Main = (props: IProps) => {
-
-    const doc = new GoogleSpreadsheet(
-        '1Wm8Y8eq3-unGJOyjaMf5EK_v22kKESYmPFaFo8uQCuk', { token:  props.creds.access_token}
-    )
-
-    const init = async () => {
-        await doc.loadInfo() // loads document properties and worksheets
-        console.log(doc.title)
-        const sheet = doc.sheetsByIndex[0]; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
-        console.log('sheet', sheet);
+    const getUsersItems = (sheet:any) => {
+        let blocks = [] as any
+        for (const user in props.sheets) {
+            blocks.push(<Block user={props.sheets[user]} whom={user}/>)
+          }
+          return blocks
     }
-
-    useEffect(() => { init()}, [])
-
-
-    const addSheet = async () => {
-        const sheet = await doc.addSheet({ headerValues: ['name', 'email'] });
-    }
-
     return (
-        <>
-        main
-    <button onClick={() => addSheet()}>add sheet</button>
-        </>
+        <div className={styles.items_container}>
+            {getUsersItems(props.sheets)}
+        </div>
     )
 }
