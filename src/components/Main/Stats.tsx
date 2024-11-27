@@ -49,7 +49,7 @@ const SUM_NEEDED = 98000;
   
           <Group align="flex-end" gap="xs">
             <Text className={classes.value}>{stat.value}₽</Text>
-            <Text c={stat.diff > 0 ? 'teal' : 'red'} fz="sm" fw={500} className={classes.diff}>
+            <Text c={stat.diff < 100 ? 'teal' : 'red'} fz="sm" fw={500} className={classes.diff}>
               <span>{stat.diff}%</span>
               <DiffIcon size={16} stroke={1.5} />
             </Text>
