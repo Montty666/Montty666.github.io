@@ -2,4 +2,6 @@
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    height: 100dvh;
+    overflow: auto;
 }

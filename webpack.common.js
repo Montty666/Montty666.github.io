@@ -18,20 +18,42 @@ module.exports = {
                 exclude: "/node_modules/",
             },
             {
-                test: /\.module.css$/,
+                test: /\.css$/i,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: "css-loader",
-                        options: {
-                            esModule: true,
-                            modules: {
-                                namedExport: true,
+                  "style-loader",
+                  "css-loader",
+                  {
+                    loader: "postcss-loader",
+                    options: {
+                      postcssOptions: {
+                        plugins: [
+                          [
+                            "postcss-preset-env",
+                            {
+                              // Options
                             },
-                        },
+                          ],
+                        ],
+                      },
                     },
+                  },
                 ],
-            },
+              },
+            // {
+            //     test: /\.module.css$/,
+            //     use: [
+            //         MiniCssExtractPlugin.loader,
+            //         {
+            //             loader: "css-loader",
+            //             options: {
+            //                 esModule: true,
+            //                 modules: {
+            //                     namedExport: true,
+            //                 },
+            //             },
+            //         },
+            //     ],
+            // },
         ],
     },
     output: {

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import * as styles from './Main.module.css'
 import { Block } from '../Block/Block'
+import { Sum } from './Sum';
+import { Stats } from './Stats';
 
 interface IProps {
     sheets: any
@@ -16,7 +18,8 @@ export const Main = (props: IProps) => {
     }
     return (
         <div className={styles.items_container}>
-            {getUsersItems(props.sheets)}
+            <Sum sheets={props.sheets}/>
+            <Stats sheets={props.sheets}/>
         </div>
     )
 }

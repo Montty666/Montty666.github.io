@@ -9,6 +9,7 @@
     align-items: center;
     flex-direction: column;
     padding: 16px;
+    max-width: 375px;
 }
 
 .video_bg {
